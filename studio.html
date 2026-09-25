@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Studio — Build your agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+  <div class="topnav accent">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">IE</div>
+      <span class="brand-name">Expertise Exchange</span>
+    </a>
+    <nav>
+      <a href="studio.html" class="navlink active">Agent Studio</a>
+      <a href="earnings.html" class="navlink">Earnings</a>
+    </nav>
+    <div class="spacer"></div>
+    <div class="who">
+      <div class="avatar">MC</div>
+      <span>Maria Chen, CPA · Advisor</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="container">
+
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:18px;">
+        <div>
+          <h1 style="font-size:23px; margin-bottom:4px; letter-spacing:-.3px;">Building: Multi-Entity Close Copilot</h1>
+          <p class="muted small" style="margin:0;">No code — describe your judgment, IES wires it to the data.</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-ghost btn-sm" type="button">Save draft</button>
+          <button class="btn btn-accent btn-sm" type="button" onclick="runTest()">Run test</button>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:18px; flex-wrap:wrap;">
+
+        <div style="flex:2 1 480px; display:flex; flex-direction:column; gap:14px;">
+
+          <div class="card" style="padding:18px 20px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <div class="step-num">1</div>
+              <span style="font-family:'Manrope',sans-serif; font-weight:700; font-size:14.5px;">Connect the data it needs</span>
+            </div>
+            <div class="grid-2">
+              <div style="display:flex; align-items:center; justify-content:space-between; background:#F8FAF8; border:1px solid var(--line); border-radius:10px; padding:10px 14px;">
+                <span style="font-size:13px; font-weight:600;">General Ledger</span>
+                <div class="toggle toggle-on"><div class="toggle-dot"></div></div>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; background:#F8FAF8; border:1px solid var(--line); border-radius:10px; padding:10px 14px;">
+                <span style="font-size:13px; font-weight:600;">Multi-Entity Hub</span>
+                <div class="toggle toggle-on"><div class="toggle-dot"></div></div>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; background:#F8FAF8; border:1px solid var(--line); border-radius:10px; padding:10px 14px;">
+                <span style="font-size:13px; font-weight:600;">AR / AP</span>
+                <div class="toggle toggle-on"><div class="toggle-dot"></div></div>
+              </div>
+              <div style="display:flex; align-items:center; justify-content:space-between; background:#F8FAF8; border:1px solid var(--line); border-radius:10px; padding:10px 14px;">
+                <span style="font-size:13px; font-weight:600; color:#94A3A0;">Payroll</span>
+                <div class="toggle toggle-off"><div class="toggle-dot"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:18px 20px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <div class="step-num">2</div>
+              <span style="font-family:'Manrope',sans-serif; font-weight:700; font-size:14.5px;">Teach it your judgment</span>
+            </div>
+            <div style="background:#F8FAF8; border:1px solid var(--line); border-radius:10px; padding:14px 16px; font-size:13.5px; line-height:1.6;">
+              "Reconcile every entity against the chart of accounts nightly. When two entities show an intercompany balance that doesn't net to zero, post the standard elimination entry I use for wholly-owned subs. Draft the consolidated package every morning before 7am."
+            </div>
+            <div class="small muted" style="margin-top:8px;">Written like you'd explain it to a new hire — IES turns it into the agent's working rules.</div>
+          </div>
+
+          <div class="card amber" style="padding:18px 20px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <div class="step-num amber">3</div>
+              <span style="font-family:'Manrope',sans-serif; font-weight:700; font-size:14.5px; color:#7C4A0A;">Set the guardrails — always escalate when…</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #F1D9A8; border-radius:9px; padding:9px 13px; flex-wrap:wrap;">
+                <span style="font-size:13px;">A variance exceeds</span>
+                <span style="font-size:13px; font-weight:700; background:var(--amber-soft); border-radius:6px; padding:2px 8px;">$15,000</span>
+                <span style="font-size:13px;">or</span>
+                <span style="font-size:13px; font-weight:700; background:var(--amber-soft); border-radius:6px; padding:2px 8px;">2% of revenue</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #F1D9A8; border-radius:9px; padding:9px 13px;">
+                <span style="font-size:13px;">A new entity or account appears that it hasn't seen before</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #F1D9A8; border-radius:9px; padding:9px 13px;">
+                <span style="font-size:13px;">Anything touches tax treatment — routes to me, not the client</span>
+              </div>
+              <div style="font-size:12.5px; font-weight:700; color:#7C4A0A; cursor:pointer;">+ Add another guardrail</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="flex:1 1 280px; max-width:320px; display:flex; flex-direction:column; gap:14px;">
+
+          <div class="card" style="padding:18px 20px;">
+            <div style="font-family:'Manrope',sans-serif; font-weight:700; font-size:14px; margin-bottom:10px;">Test against sample data</div>
+            <div id="test-console" style="background:#0F172A; border-radius:10px; padding:13px 14px; font-size:12px; color:#D7E3DA; line-height:1.7; font-family:monospace;">
+              &gt; Loaded: 14-entity sample set<br>
+              &gt; 12 reconciled clean<br>
+              &gt; 1 variance flagged ($18.4k)<br>
+              &gt; 1 tax question escalated<br>
+              <span style="color:#6EE7A8;">✓ Matches your stated rules</span>
+            </div>
+          </div>
+
+          <div class="card" style="padding:18px 20px;">
+            <div style="font-family:'Manrope',sans-serif; font-weight:700; font-size:14px; margin-bottom:10px;">Certification checklist</div>
+            <div class="checklist"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14532D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.2 2.2L16 9.5"/></svg> Data access scoped &amp; reviewed</div>
+            <div class="checklist"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14532D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.2 2.2L16 9.5"/></svg> Backtested on 50 close cycles</div>
+            <div class="checklist"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14532D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.2 2.2L16 9.5"/></svg> Guardrails cover every high-risk action</div>
+            <div class="checklist"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14532D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.2 2.2L16 9.5"/></svg> Liability terms accepted</div>
+          </div>
+
+          <a href="earnings.html" class="btn btn-accent" style="width:100%;">Publish to Exchange</a>
+          <div style="font-size:12px; color:var(--ink-soft); text-align:center;">Goes live for every eligible IES customer within 24 hours</div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function runTest(){
+  var c = document.getElementById('test-console');
+  c.style.opacity = '0.4';
+  setTimeout(function(){ c.style.opacity = '1'; }, 350);
+}
+</script>
+</body>
+</html>

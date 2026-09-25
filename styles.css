@@ -1,0 +1,189 @@
+/* Intuit Expertise Exchange — shared design system */
+
+:root{
+  --ink:#0F172A;
+  --ink-soft:#5B6B63;
+  --paper:#FFFFFF;
+  --canvas:#F5F7F3;
+  --line:#E1E7E1;
+  --brand:#1E8E3E;
+  --brand-dark:#14532D;
+  --brand-soft:#E8F5EA;
+  --accent:#2452D9;
+  --accent-dark:#1D3FAE;
+  --accent-soft:#EAF0FE;
+  --amber:#B45309;
+  --amber-soft:#FCF1DE;
+  --amber-line:#F1D9A8;
+  --red:#B42318;
+  --red-soft:#FDECEC;
+  --max:1280px;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--canvas);
+  color:var(--ink);
+  font-family:'Source Sans 3', -apple-system, Segoe UI, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{ text-decoration:none; color:inherit; }
+
+h1,h2,h3{ font-family:'Manrope', -apple-system, Segoe UI, sans-serif; margin:0; }
+
+.page{ min-height:100vh; display:flex; flex-direction:column; }
+
+/* ---- Top nav ---- */
+.topnav{
+  height:60px;
+  flex-shrink:0;
+  background:#0F172A;
+  display:flex;
+  align-items:center;
+  padding:0 24px;
+  gap:28px;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.topnav .brand{ display:flex; align-items:center; gap:9px; }
+.topnav .brand-mark{
+  width:28px; height:28px; border-radius:8px;
+  background:var(--brand);
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-family:'Manrope',sans-serif; font-weight:800; font-size:13px;
+}
+.topnav.accent .brand-mark{ background:var(--accent); }
+.topnav .brand-name{ color:#fff; font-family:'Manrope',sans-serif; font-weight:700; font-size:15px; white-space:nowrap; }
+.topnav nav{ display:flex; gap:24px; }
+.navlink{ color:rgba(255,255,255,.68); font-size:14px; font-weight:600; padding:4px 2px; border-bottom:2px solid transparent; }
+.navlink.active{ color:#fff; border-bottom-color:var(--brand); }
+.topnav.accent .navlink.active{ border-bottom-color:var(--accent); }
+.spacer{ flex-grow:1; }
+.who{
+  display:flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14);
+  border-radius:999px; padding:5px 14px 5px 5px;
+  flex-shrink:0;
+}
+.who .avatar{
+  width:24px; height:24px; border-radius:50%;
+  background:var(--brand); color:#fff; font-size:10.5px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; font-family:'Manrope',sans-serif;
+}
+.topnav.accent .who .avatar{ background:var(--accent); }
+.who span{ color:#fff; font-size:12.5px; white-space:nowrap; }
+
+/* ---- Layout ---- */
+.wrap{ flex-grow:1; padding:30px 40px 56px; }
+.container{ max-width:var(--max); margin:0 auto; }
+
+/* ---- Cards ---- */
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);
+}
+.card.amber{ background:var(--amber-soft); border-color:var(--amber-line); }
+.card.hover{ transition:transform .15s ease, box-shadow .15s ease; }
+.card.hover:hover{ box-shadow:0 2px 4px rgba(15,23,42,.06), 0 14px 28px rgba(15,23,42,.09); transform:translateY(-2px); }
+
+/* ---- Icon boxes ---- */
+.icon-box{ display:flex; align-items:center; justify-content:center; border-radius:12px; flex-shrink:0; }
+.icon-box.brand{ background:var(--brand-soft); color:var(--brand-dark); }
+.icon-box.accent{ background:var(--accent-soft); color:var(--accent); }
+.icon-box.amber{ background:var(--amber-soft); color:var(--amber); }
+
+/* ---- Chips / badges ---- */
+.chip{ font-size:13px; font-weight:600; color:var(--ink-soft); background:#fff; border:1px solid var(--line); border-radius:999px; padding:7px 14px; white-space:nowrap; }
+.chip.active{ background:var(--brand-dark); color:#fff; border-color:var(--brand-dark); }
+.badge{ font-size:11px; font-weight:700; border-radius:999px; padding:3px 10px; white-space:nowrap; }
+.badge.featured{ color:var(--brand-dark); background:var(--brand-soft); }
+.badge.certified{ color:#1D4ED8; background:var(--accent-soft); }
+.eyebrow{ display:inline-block; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--brand-dark); background:var(--brand-soft); border-radius:999px; padding:5px 14px; }
+
+/* ---- Buttons ---- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family:'Source Sans 3',sans-serif; font-weight:700; font-size:14.5px;
+  border-radius:10px; padding:12px 18px; border:none; cursor:pointer;
+}
+.btn-primary{ background:var(--brand); color:#fff; }
+.btn-accent{ background:var(--accent); color:#fff; }
+.btn-ghost{ background:#fff; border:1px solid var(--line); color:var(--ink-soft); }
+.btn-sm{ font-size:12.5px; padding:8px 14px; border-radius:9px; }
+
+/* ---- Role cards (landing) ---- */
+.role-card{
+  background:#fff; border:1px solid var(--line); border-radius:18px; padding:28px 26px;
+  min-height:250px; display:flex; flex-direction:column;
+  box-shadow:0 1px 2px rgba(15,23,42,.04), 0 8px 20px rgba(15,23,42,.05);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.role-card:hover{ box-shadow:0 2px 4px rgba(15,23,42,.06), 0 16px 32px rgba(15,23,42,.10); transform:translateY(-2px); }
+
+/* ---- Rows / lists ---- */
+.row{ display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-bottom:1px solid #EEF2EF; }
+.row:last-child{ border-bottom:none; }
+.task{ display:flex; gap:12px; align-items:flex-start; padding:12px 14px; border-radius:11px; margin-bottom:8px; }
+
+/* ---- Table ---- */
+table{ width:100%; border-collapse:collapse; }
+th{ font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft); text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); font-weight:700; }
+td{ font-size:13px; padding:10px 10px; border-bottom:1px solid #F0F3F0; }
+tr:last-child td{ border-bottom:none; }
+
+/* ---- Toggles ---- */
+.toggle{ width:32px; height:18px; border-radius:999px; display:flex; padding:2px; flex-shrink:0; }
+.toggle-on{ background:var(--brand); }
+.toggle-off{ background:#D7DEDA; }
+.toggle-dot{ width:14px; height:14px; border-radius:50%; background:#fff; }
+.toggle-on .toggle-dot{ margin-left:auto; }
+
+/* ---- Step numbers ---- */
+.step-num{
+  width:24px; height:24px; border-radius:7px; background:var(--accent-soft); color:var(--accent-dark);
+  font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center;
+  font-family:'Manrope',sans-serif; flex-shrink:0;
+}
+.step-num.amber{ background:#F5E1B8; color:#7C4A0A; }
+
+/* ---- Checklist ---- */
+.checklist{ display:flex; align-items:center; gap:10px; font-size:13px; padding:7px 0; }
+
+/* ---- Stat strip ---- */
+.stat{ text-align:center; }
+.stat .num{ font-family:'Manrope',sans-serif; font-weight:800; font-size:22px; color:var(--brand-dark); }
+.stat .label{ font-size:12.5px; color:var(--ink-soft); }
+
+/* ---- Grids ---- */
+.grid-2{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.grid-3{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.grid-4{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+.flex{ display:flex; }
+.flex-col{ display:flex; flex-direction:column; }
+.gap-14{ gap:14px; }
+.gap-18{ gap:18px; }
+
+/* ---- Utility ---- */
+.muted{ color:var(--ink-soft); }
+.small{ font-size:12.5px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px){
+  .wrap{ padding:22px 18px 44px; }
+  .grid-3{ grid-template-columns:1fr; }
+  .grid-4{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .grid-2{ grid-template-columns:1fr; }
+  .topnav{ padding:0 16px; gap:16px; }
+  .topnav .brand-name{ display:none; }
+  .who span{ display:none; }
+}
+@media (max-width: 640px){
+  .grid-4{ grid-template-columns:1fr; }
+}
